@@ -204,9 +204,9 @@
       <span class="line">back into <span class="accent">artificial</span> intelligence.</span>
     </h2>
 
-    <div class="columns">
-      <p data-fill>With AI, your team can turn any <span class="accent">idea</span> into a working product in days. Knowing whether it’s any good is harder. Does it fit what your customers need, and does it still feel like your brand? Do you trust what the model came up with? And when anyone can create anything, who decides what’s <span class="accent">worth shipping?</span></p>
-      <p data-fill>I’m Ronny, a design director with 20 years in human-centered design. I help your AI team build products people trust and love. Before anything reaches your users, I look at the concept, the UX, the design and the way your AI behaves. Then I help you improve it and launch it with people in control.</p>
+    <div class="columns" data-fill>
+      <p>With AI, your team can turn any <span class="accent">idea</span> into a working product in days. Knowing whether it’s any good is harder. Does it fit what your customers need, and does it still feel like your brand? Do you trust what the model came up with? And when anyone can create anything, who decides what’s <span class="accent">worth shipping?</span></p>
+      <p>I’m Ronny, a design director with 20 years in human-centered design. I help your AI team build products people trust and love. Before anything reaches your users, I look at the concept, the UX, the design and the way your AI behaves. Then I help you improve it and launch it with people in control.</p>
     </div>
 
     <p class="display" data-fill>
@@ -255,12 +255,17 @@
     const vh = innerHeight;
     const y = scrollY;
     const maxY = document.documentElement.scrollHeight - vh;
+    let prevEnd = -Infinity;
     for (const b of blocks) {
       const r = b.el.getBoundingClientRect();
-      // 0 when the top enters at 85% of the viewport, 1 when the bottom reaches 45%,
-      // or at the very end of the page for blocks that can never scroll that far.
-      const start = Math.min(r.top + y - vh * 0.85, maxY - 1);
-      const end = Math.min(r.bottom + y - vh * 0.45, maxY);
+      // 0 when the top enters at 85% of the viewport, 1 when the bottom reaches 45%.
+      // A block waits until the previous one is fully lit, and everything finishes
+      // by the very end of the page for blocks that can never scroll that far.
+      const ownStart = r.top + y - vh * 0.85;
+      const ownEnd = r.bottom + y - vh * 0.45;
+      const end = Math.min(Math.max(ownStart, prevEnd) + (ownEnd - ownStart), maxY);
+      const start = Math.min(Math.max(ownStart, prevEnd), end - 1);
+      prevEnd = end;
       const p = Math.min(1, Math.max(0, (y - start) / Math.max(1, end - start)));
       if (p === b.last) continue;
       b.last = p;
