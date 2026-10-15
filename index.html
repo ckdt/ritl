@@ -24,6 +24,8 @@
     --lit: #ffffff;
     --pad: clamp(16px, 6.111vw, 88px);
     --gap: clamp(48px, 6.111vw, 88px);
+    --green: oklch(0.8 0.2 145);
+    --text: clamp(1.125rem, 0.6rem + 1.85vw, 2rem);
     --font: "Archivo", "Helvetica Neue", Arial, system-ui, sans-serif;
     color-scheme: dark;
   }
@@ -69,11 +71,18 @@
   .display .line { display: block; }
   .display .line + .line.spaced { margin-top: 1em; }
   .accent { color: var(--orange); }
+  .link {
+    text-decoration: underline 0.06em transparent;
+    text-underline-offset: 0.15em;
+    transition: text-decoration-color .2s;
+  }
+  .link:hover { text-decoration-color: currentColor; }
+  .link:focus-visible { outline: 3px solid var(--lit); outline-offset: 4px; border-radius: 2px; }
   .columns {
     display: grid;
     gap: 1.25em;
     width: 100%;
-    font-size: clamp(1.125rem, 0.6rem + 1.85vw, 2rem);
+    font-size: var(--text);
     line-height: 1.3;
     letter-spacing: -0.01em;
   }
@@ -92,6 +101,36 @@
   }
   .button:hover { background: var(--lit); }
   .button:focus-visible { outline: 4px solid var(--lit); outline-offset: 6px; }
+  .cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75em var(--gap);
+  }
+  .availability {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    margin: 0;
+    font-size: calc(var(--text) * 0.85);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: var(--lit);
+  }
+  /* Status dot: a ring expands from the dot and fades out. */
+  .availability::before {
+    content: "";
+    flex: none;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s ease-out infinite;
+  }
+  @keyframes pulse {
+    from { box-shadow: 0 0 0 0 color-mix(in oklch, var(--green) 60%, transparent); }
+    to   { box-shadow: 0 0 0 0.5em transparent; }
+  }
   .footer {
     display: flex;
     flex-wrap: wrap;
@@ -134,7 +173,7 @@
   }
   @keyframes spin { to { transform: rotate(-360deg); } }
   @media (prefers-reduced-motion: reduce) {
-    .loop { animation: none; }
+    .loop, .availability::before { animation: none; }
   }
   .sr-only {
     position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -206,7 +245,7 @@
 
     <div class="columns" data-fill>
       <p>With AI, your team can turn any <span class="accent">idea</span> into a working product in days. Knowing whether it’s any good is harder. Does it fit what your customers need, and does it still feel like your brand? Do you trust what the model came up with? And when anyone can create anything, who decides what’s <span class="accent">worth shipping?</span></p>
-      <p>I’m Ronny, a design director with 20 years in human-centered design. I help your AI team build products people trust and love. Before anything reaches your users, I look at the concept, the UX, the design and the way your AI behaves. Then I help you improve it and launch it with people in control.</p>
+      <p>I’m <a class="accent link" href="https://www.linkedin.com/in/rwieckardt/" target="_blank" rel="noopener">Ronny<span class="sr-only"> (opens in a new tab)</span></a>, a design director with 20 years in human-centered design. I help your AI team build products people trust and love. Before anything reaches your users, I look at the concept, the UX, the design and the way your AI behaves. Then I help you improve it and launch it with people in control.</p>
     </div>
 
     <p class="display" data-fill>
@@ -214,7 +253,10 @@
       <span class="line">Get ronny in the loop today!</span>
     </p>
 
-    <p class="display"><a class="button" href="mailto:get@ronnyintheloop.com">Start a project</a></p>
+    <div class="cta">
+      <p class="display"><a class="button" href="mailto:get@ronnyintheloop.com">Start a project</a></p>
+      <p class="availability">Availability 16 hours, from November</p>
+    </div>
   </section>
 </main>
 
