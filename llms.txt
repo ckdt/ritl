@@ -1,0 +1,54 @@
+# Ronny in the Loop
+
+> Human-centered Design Direction for the AI era. Ronny Wieckardt is a design director with 20 years of experience in human-centered design: the connecting strategist in AI projects, who looks at the whole, gets hands-on where needed, and keeps the people who have to use it in view.
+
+## The problem
+
+Many teams are already busy with AI: prompts, pilots, roadmaps. Somewhere along the way the people get lost from view. The customer, the colleague, the user who will have to work with it. And the work splits into parts: a model here, a prototype there, a strategy deck somewhere else. Nobody looks at the whole.
+
+## The role
+
+Ronny in the Loop is the connecting strategist between strategy, team, product and people.
+
+- **Looks at the whole.** Idea, product, process and strategy together, not one part in isolation.
+- **Hands-on where needed.** Doesn't stop at advice: adjusts the concept, the flow, the design or the prompts when that is the fastest way forward.
+- **Data and imagination.** Advice is based on data, combined with out-of-the-box thinking and human judgment. Not purely analytical, the way a model would be.
+
+## What Ronny looks at
+
+- **AI prototypes**: does it work for real people, or only in the demo?
+- **Ideas**: is AI the solution here, or is the team looking for a problem to fit the technology?
+- **Processes**: where does AI take over, and where should a person stay in the loop?
+- **Strategy**: will it pay off, or does it mostly burn tokens?
+
+Always honest, constructive and direct: what works, what rubs, and what to do differently.
+
+## How this differs from a senior UX or digital designer
+
+A senior UX or digital designer usually owns one part of the product, such as screens, flows or components, within a brief someone else set. Ronny in the Loop works across those boundaries.
+
+- **Connects instead of executes a part.** Brings strategy, teams and product together, and makes sure decisions about AI start from people.
+- **Strategic and hands-on.** Works at the level of direction and strategy, and still steps in to make changes where it matters.
+- **Beyond the interface.** Also looks at whether the idea makes sense, how work and processes change, and whether the strategy pays off.
+- **Human judgment, not just analysis.** AI is good at fast and analytical. Ronny adds what it lacks: imagination, taste and a feel for what it does to people.
+- **20 years of human-centered design**, at design director level.
+
+## Ways to work together
+
+- **One-off**: a single session on a prototype, idea or plan, with clear advice and next steps.
+- **Per sprint**: Ronny joins at key moments in the project, steers and makes hands-on adjustments where needed.
+- **Ongoing**: a permanent design director and connecting strategist alongside the team for the duration of the AI project.
+
+## Who it's for
+
+Teams and companies that are already working with AI and want to make sure it works for the people who have to use it.
+
+## Availability
+
+16 hours per week, from November 2026.
+
+## Contact
+
+- Email: get@ronnyintheloop.com
+- LinkedIn: https://www.linkedin.com/in/rwieckardt/
+- Website: https://ronnyintheloop.com/
