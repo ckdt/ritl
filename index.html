@@ -155,7 +155,7 @@
   }
   .availability {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.6em;
     margin: 0;
     font-size: calc(var(--text) * 0.85);
@@ -169,6 +169,8 @@
     flex: none;
     width: 0.5em;
     height: 0.5em;
+    /* Centre the dot on the first line of text. */
+    margin-top: calc((1lh - 0.5em) / 2);
     border-radius: 50%;
     background: var(--green);
     animation: pulse 2s ease-out infinite;
@@ -301,7 +303,7 @@
 
     <div class="cta">
       <p class="display"><a class="button" href="mailto:get@ronnyintheloop.com">Start a project</a></p>
-      <p class="availability">Availability 16 hrs / week, starting November</p>
+      <p class="availability"><span>Availability 16 hrs / week,<br>starting November</span></p>
     </div>
   </section>
 </main>
